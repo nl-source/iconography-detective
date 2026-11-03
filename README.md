@@ -1,6 +1,6 @@
 # Iconography Detective
 
-**Live site: https://GITHUB_USER.github.io/iconography-detective/**
+**Live site: https://nl-source.github.io/iconography-detective/**
 
 *How do you know who you're looking at?* Iconography Detective teaches you to identify saints in European art by their **attributes**: Jerome's lion, Catherine's spiked wheel, Sebastian's arrows. It then follows those attributes across six centuries of the National Gallery of Art's collection to see which clues artists kept, which they dropped, and when.
 
@@ -75,7 +75,7 @@ This project was built with an AI coding partner (Claude), as the course intends
 ## Run it locally
 
 ```bash
-git clone https://github.com/GITHUB_USER/iconography-detective.git
+git clone https://github.com/nl-source/iconography-detective.git
 cd iconography-detective
 python3 -m http.server 8000        # then open http://localhost:8000
 ```

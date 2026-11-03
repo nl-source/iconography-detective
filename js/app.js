@@ -529,7 +529,7 @@ function renderMethod() {
       <p>In CS 85 we contrasted <em>deterministic</em> programs, which give the same output for the same input every time, with generative AI, which does not. I built this tool with an AI coding partner, but the analysis itself is deterministic on purpose: an art-historical claim ("halos decline after 1400") should be reproducible, and every data point should trace back to a sentence a human can read. An LLM could probably recognize more attributes, especially in generic descriptions. That is a good next step, provided its answers are logged as evidence the same way.</p>
 
       <h2>Reproduce it</h2>
-      <p>Source code, the lexicon, and the build script are on GitHub. Running <code>python3 scripts/build_data.py</code> downloads the NGA data and rebuilds <code>data/works.json</code>. To change what counts as an attribute, edit <code>data/lexicon.json</code> and rebuild.</p>
+      <p>Source code, the lexicon, and the build script are <a href="https://github.com/nl-source/iconography-detective">on GitHub</a>. Running <code>python3 scripts/build_data.py</code> downloads the NGA data and rebuilds <code>data/works.json</code>. To change what counts as an attribute, edit <code>data/lexicon.json</code> and rebuild.</p>
     </article>`;
   scrollTop();
 }
