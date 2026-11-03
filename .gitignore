@@ -1,0 +1,4 @@
+.cache/
+.nga-subset/
+__pycache__/
+.DS_Store

@@ -1,0 +1,1461 @@
+{
+  "_about": "Expert knowledge layer for Iconography Detective. Each saint has a title pattern (to find works in the NGA collection), optional exclusions, a short hagiographic note, and a list of attributes. Each attribute has regex patterns (case-insensitive, Python/JS compatible) that are searched for in the NGA visual description, the NGA keyword terms, and the title. Sources for the attributes: James Hall, Dictionary of Subjects and Symbols in Art; George Ferguson, Signs & Symbols in Christian Art; Jacobus de Voragine, The Golden Legend.",
+  "universal": [
+    {
+      "id": "halo",
+      "label": "Halo",
+      "patterns": [
+        "\\bhalos?\\b",
+        "\\bnimbus\\b",
+        "\\baureole\\b",
+        "ring of (gold|light)",
+        "gold(en)?,? (disk|disc)",
+        "(disk|disc)-like",
+        "rays of (gold|light)"
+      ],
+      "why": "A ring or disk of light marking holiness. Common in medieval gold-ground painting; it thins to a faint ring and often disappears as painters pursued naturalism in the 15th–17th centuries."
+    }
+  ],
+  "saints": [
+    {
+      "id": "jerome",
+      "name": "Saint Jerome",
+      "dates": "c. 347–420",
+      "title": "\\bJerome\\b",
+      "blurb": "Scholar and Doctor of the Church who translated the Bible into Latin (the Vulgate). Artists show him two ways: the learned scholar in his study, or the penitent hermit in the Syrian desert beating his breast with a stone.",
+      "attributes": [
+        {
+          "id": "lion",
+          "label": "Lion",
+          "patterns": [
+            "\\blions?\\b"
+          ],
+          "why": "In The Golden Legend Jerome removes a thorn from a lion's paw; the grateful lion stays with him. (The story was likely borrowed from Saint Gerasimus, whose name sounds like Geronimus.)"
+        },
+        {
+          "id": "cardinal",
+          "label": "Cardinal's hat / red robes",
+          "patterns": [
+            "cardinal",
+            "red hat",
+            "wide-brimmed (red )?hat",
+            "galero",
+            "\\b(red|scarlet|crimson) (robe|cloak|mantle|gown)"
+          ],
+          "why": "An anachronism: cardinals did not exist in Jerome's day, but his service as secretary to Pope Damasus led later artists to dress him as one."
+        },
+        {
+          "id": "book",
+          "label": "Book / writing",
+          "patterns": [
+            "\\bbooks?\\b",
+            "\\bwriting\\b",
+            "\\bwrites\\b",
+            "\\bquill\\b",
+            "\\bpen\\b",
+            "\\bmanuscript\\b",
+            "\\binkwell\\b"
+          ],
+          "why": "His translation of the Bible; the scholar-in-his-study type."
+        },
+        {
+          "id": "study",
+          "label": "Study / interior",
+          "patterns": [
+            "\\bstudy\\b",
+            "\\bdesk\\b",
+            "\\blectern\\b",
+            "\\bshel(f|ves)\\b",
+            "\\binterior\\b",
+            "\\broom\\b",
+            "\\bwindows?\\b"
+          ],
+          "why": "The scholar type: Jerome at work in a book-lined study, made famous by Antonello da Messina and Albrecht Dürer."
+        },
+        {
+          "id": "skull",
+          "label": "Skull",
+          "patterns": [
+            "\\bskulls?\\b",
+            "death's head"
+          ],
+          "why": "A memento mori, meditation on death. Increasingly common from the late 15th century on."
+        },
+        {
+          "id": "stone",
+          "label": "Stone (penitence)",
+          "patterns": [
+            "(holds?|holding|clutch\\w*|grips?|gripping|raises?|raising)[^.]{0,40}\\b(stone|rock)\\b",
+            "\\bstone\\b[^.]{0,25}\\bin (his|one|the other) hand",
+            "beat\\w* (his|the) (breast|chest)"
+          ],
+          "why": "The penitent Jerome strikes his chest with a stone, recalling his account of temptation in the desert."
+        },
+        {
+          "id": "crucifix",
+          "label": "Crucifix",
+          "patterns": [
+            "\\bcrucifix\\b",
+            "\\bcross\\b"
+          ],
+          "why": "Object of his prayer in the wilderness."
+        },
+        {
+          "id": "wilderness",
+          "label": "Wilderness / cave",
+          "patterns": [
+            "wilderness",
+            "\\bdesert\\b",
+            "\\bcave\\b",
+            "\\bgrotto\\b",
+            "rocky landscape"
+          ],
+          "why": "His years as a hermit in the desert of Chalcis."
+        },
+        {
+          "id": "barechest",
+          "label": "Bare chest / ascetic body",
+          "patterns": [
+            "bare[- ]chest",
+            "bare (torso|shoulders?|chest)",
+            "\\bnude\\b",
+            "\\bnaked\\b",
+            "loincloth",
+            "exposes? (his )?(chest|torso)",
+            "expose[sd]? his"
+          ],
+          "why": "Ascetic self-denial; the emaciated or muscular nude penitent became a showcase for anatomy."
+        },
+        {
+          "id": "hourglass",
+          "label": "Hourglass",
+          "patterns": [
+            "hourglass",
+            "hour glass",
+            "hour-glass"
+          ],
+          "why": "Passing time, a vanitas symbol."
+        },
+        {
+          "id": "trumpet",
+          "label": "Trumpet of Judgment",
+          "patterns": [
+            "trumpet"
+          ],
+          "why": "Jerome wrote that he always heard the trumpet of the Last Judgment."
+        }
+      ]
+    },
+    {
+      "id": "catherine",
+      "name": "Saint Catherine of Alexandria",
+      "dates": "early 4th c. (legendary)",
+      "title": "\\bCatherine\\b|\\bCaterina\\b",
+      "exclude": "Siena|Genoa|Bologna|Ricci",
+      "blurb": "A learned princess who out-argued pagan philosophers and refused to marry the emperor. A spiked wheel meant to torture her shattered at her touch; she was then beheaded.",
+      "attributes": [
+        {
+          "id": "wheel",
+          "label": "Spiked wheel",
+          "patterns": [
+            "\\bwheels?\\b"
+          ],
+          "why": "The breaking wheel that miraculously shattered (origin of the 'Catherine wheel')."
+        },
+        {
+          "id": "sword",
+          "label": "Sword",
+          "patterns": [
+            "\\bswords?\\b",
+            "\\bblade\\b"
+          ],
+          "why": "The instrument of her beheading."
+        },
+        {
+          "id": "crown",
+          "label": "Crown",
+          "patterns": [
+            "\\bcrowns?\\b",
+            "\\bcrowned\\b",
+            "\\bdiadem\\b",
+            "\\btiara\\b"
+          ],
+          "why": "Her royal birth."
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "patterns": [
+            "\\bbooks?\\b"
+          ],
+          "why": "Her learning and her debate with the fifty philosophers."
+        },
+        {
+          "id": "palm",
+          "label": "Martyr's palm",
+          "patterns": [
+            "palm (frond|branch|leaf|leaves)",
+            "\\bfronds?\\b",
+            "martyr's palm"
+          ],
+          "why": "General symbol of martyrdom (victory over death)."
+        },
+        {
+          "id": "ring",
+          "label": "Ring / mystic marriage",
+          "patterns": [
+            "\\bring\\b(?! of)",
+            "mystic marriage",
+            "\\bbetroth"
+          ],
+          "why": "In a vision the Christ Child placed a ring on her finger — the 'Mystic Marriage of Saint Catherine'."
+        },
+        {
+          "id": "rich",
+          "label": "Rich dress / jewels",
+          "patterns": [
+            "\\bjewel",
+            "\\bpearls?\\b",
+            "brocade",
+            "\\bgold(en)? (dress|gown|embroider)",
+            "\\bvelvet\\b",
+            "\\bermine\\b"
+          ],
+          "why": "Royal status, contrasted with the humble dress of most saints."
+        }
+      ]
+    },
+    {
+      "id": "sebastian",
+      "name": "Saint Sebastian",
+      "dates": "d. c. 288",
+      "title": "\\bSebastian\\b",
+      "blurb": "A Roman soldier revealed as a Christian, tied up and shot with arrows. He survived, was nursed by Saint Irene, and was later clubbed to death. Invoked against plague, since arrows were an old image of plague striking suddenly.",
+      "attributes": [
+        {
+          "id": "arrows",
+          "label": "Arrows",
+          "patterns": [
+            "\\barrows?\\b",
+            "\\bshafts?\\b"
+          ],
+          "why": "His first martyrdom."
+        },
+        {
+          "id": "bound",
+          "label": "Bound to tree / column",
+          "patterns": [
+            "\\btied\\b",
+            "\\bbound\\b",
+            "\\bropes?\\b",
+            "\\bcolumn\\b",
+            "\\bpost\\b",
+            "\\bpillar\\b",
+            "tree (trunk|stump)"
+          ],
+          "why": "He was tied to a stake, tree or column as a target."
+        },
+        {
+          "id": "nude",
+          "label": "Nearly nude body",
+          "patterns": [
+            "\\bnude\\b",
+            "\\bnaked\\b",
+            "loincloth",
+            "\\bbare\\b",
+            "muscular",
+            "\\btorso\\b"
+          ],
+          "why": "Renaissance artists made Sebastian a vehicle for the idealized male nude."
+        },
+        {
+          "id": "archers",
+          "label": "Archers",
+          "patterns": [
+            "\\barchers?\\b",
+            "\\bbows?\\b(?! (his|her) head)",
+            "crossbow"
+          ],
+          "why": "Narrative scenes show the soldiers shooting."
+        },
+        {
+          "id": "irene",
+          "label": "Irene tending him",
+          "patterns": [
+            "\\bIrene\\b",
+            "tend(s|ing)? (to )?(his|the) wounds?",
+            "pulls? (an |the )?arrow",
+            "removing"
+          ],
+          "why": "The widow Irene nursed him back to health — a popular 17th-century subject."
+        },
+        {
+          "id": "armor",
+          "label": "Soldier's armor",
+          "patterns": [
+            "\\barmou?r\\b"
+          ],
+          "why": "His identity as an officer of the Praetorian Guard."
+        }
+      ]
+    },
+    {
+      "id": "peter",
+      "name": "Saint Peter",
+      "dates": "d. c. 64",
+      "title": "\\bPeter\\b",
+      "exclude": "Martyr|Damian|Nolasco|Pieter|Peter Paul|Claver",
+      "blurb": "Fisherman, leader of the apostles, first bishop of Rome. Christ gave him 'the keys of the kingdom of heaven.' He was crucified upside down at his own request, feeling unworthy to die as Christ did.",
+      "attributes": [
+        {
+          "id": "keys",
+          "label": "Keys",
+          "patterns": [
+            "\\bkeys?\\b"
+          ],
+          "why": "Matthew 16:19 — the keys of heaven; often one gold and one silver."
+        },
+        {
+          "id": "inverted",
+          "label": "Upside-down cross",
+          "patterns": [
+            "upside[- ]down",
+            "\\binverted\\b",
+            "head(-| )(first|down)"
+          ],
+          "why": "His martyrdom in Rome."
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "patterns": [
+            "\\bbooks?\\b",
+            "\\bscroll\\b"
+          ],
+          "why": "The Epistles of Peter."
+        },
+        {
+          "id": "rooster",
+          "label": "Rooster",
+          "patterns": [
+            "\\brooster\\b",
+            "\\bcock\\b",
+            "\\bcockerel\\b"
+          ],
+          "why": "He denied Christ three times before the cock crowed; scenes of his tears of repentance."
+        },
+        {
+          "id": "fishing",
+          "label": "Boat / fish / net",
+          "patterns": [
+            "\\bboats?\\b",
+            "\\bfish",
+            "\\bnets?\\b"
+          ],
+          "why": "His trade as a fisherman on the Sea of Galilee."
+        },
+        {
+          "id": "tears",
+          "label": "Tears / repentance",
+          "patterns": [
+            "\\btears?\\b",
+            "\\bweep",
+            "\\bcrying\\b",
+            "clasped hands",
+            "hands clasped"
+          ],
+          "why": "The 'Penitent Saint Peter', a favourite Counter-Reformation theme of repentance."
+        },
+        {
+          "id": "beard",
+          "label": "Short gray curly beard",
+          "patterns": [
+            "(gray|grey|white)[^.]{0,20}beard",
+            "curly beard"
+          ],
+          "why": "Conventional portrait type: older man, short curly gray hair and beard."
+        }
+      ]
+    },
+    {
+      "id": "paul",
+      "name": "Saint Paul",
+      "dates": "d. c. 64",
+      "title": "\\bPaul\\b",
+      "exclude": "Vincent de Paul|Peter Paul|Paul Revere|Paolo|Paul the Hermit",
+      "blurb": "Pharisee who persecuted Christians until he was struck blind on the road to Damascus; then the great missionary and letter-writer of the early Church. As a Roman citizen he was beheaded rather than crucified.",
+      "attributes": [
+        {
+          "id": "sword",
+          "label": "Sword",
+          "patterns": [
+            "\\bswords?\\b"
+          ],
+          "why": "Instrument of his beheading (and the 'sword of the Spirit', Ephesians 6:17)."
+        },
+        {
+          "id": "book",
+          "label": "Book / letters",
+          "patterns": [
+            "\\bbooks?\\b",
+            "\\bscrolls?\\b",
+            "\\bletters?\\b",
+            "\\bwriting\\b"
+          ],
+          "why": "His Epistles."
+        },
+        {
+          "id": "bald",
+          "label": "Bald head, long dark beard",
+          "patterns": [
+            "\\bbald",
+            "high forehead",
+            "receding",
+            "long[^.]{0,20}beard",
+            "(dark|brown|black)[^.]{0,15}beard"
+          ],
+          "why": "An early portrait convention, already fixed in Early Christian art."
+        },
+        {
+          "id": "horse",
+          "label": "Fall from horse",
+          "patterns": [
+            "\\bhorses?\\b",
+            "fall(en|ing|s)? from",
+            "thrown (from|to the ground)",
+            "on the ground"
+          ],
+          "why": "The Conversion on the Road to Damascus (Acts 9)."
+        },
+        {
+          "id": "light",
+          "label": "Blinding light",
+          "patterns": [
+            "blind",
+            "beam of light",
+            "\\brays?\\b",
+            "burst of light"
+          ],
+          "why": "The light from heaven that struck him blind."
+        }
+      ]
+    },
+    {
+      "id": "baptist",
+      "name": "Saint John the Baptist",
+      "dates": "d. c. 30",
+      "title": "John the Baptist|\\bBaptist\\b|Giovannino|Infant Saint John|Young Saint John",
+      "blurb": "The prophet who lived in the wilderness, preached repentance, and baptized Christ in the Jordan. Beheaded at the request of Salome. Often appears as a child playing with the infant Christ.",
+      "attributes": [
+        {
+          "id": "lamb",
+          "label": "Lamb",
+          "patterns": [
+            "\\blambs?\\b",
+            "\\bsheep\\b"
+          ],
+          "why": "He called Christ 'the Lamb of God' (John 1:29)."
+        },
+        {
+          "id": "reedcross",
+          "label": "Reed cross / staff",
+          "patterns": [
+            "\\bcross\\b",
+            "\\bstaff\\b",
+            "\\breed\\b"
+          ],
+          "why": "A thin cross of reed, pointing to Christ's coming sacrifice."
+        },
+        {
+          "id": "camelhair",
+          "label": "Camel-hair garment",
+          "patterns": [
+            "camel",
+            "animal (skin|hide|pelt)",
+            "\\bfur\\b",
+            "\\bpelt\\b",
+            "\\bhide\\b",
+            "shaggy"
+          ],
+          "why": "Matthew 3:4 — 'raiment of camel's hair.'"
+        },
+        {
+          "id": "scroll",
+          "label": "Scroll 'Ecce Agnus Dei'",
+          "patterns": [
+            "\\bscrolls?\\b",
+            "\\bbanner\\b",
+            "\\bbanderole\\b",
+            "Ecce",
+            "Agnus"
+          ],
+          "why": "The inscription 'Behold the Lamb of God.'"
+        },
+        {
+          "id": "water",
+          "label": "River / baptism",
+          "patterns": [
+            "\\briver\\b",
+            "\\bbaptiz(e|es|ed|ing)\\b",
+            "\\bbaptism\\b",
+            "\\bJordan\\b",
+            "pours? water",
+            "\\bwater\\b"
+          ],
+          "why": "The Baptism of Christ in the Jordan."
+        },
+        {
+          "id": "head",
+          "label": "Head on a platter",
+          "patterns": [
+            "platter",
+            "\\bcharger\\b",
+            "severed head",
+            "\\bSalome\\b",
+            "decapitat",
+            "behead"
+          ],
+          "why": "His martyrdom, presented to Salome."
+        },
+        {
+          "id": "pointing",
+          "label": "Pointing gesture",
+          "patterns": [
+            "\\bpoint(s|ing)?\\b"
+          ],
+          "why": "The forerunner who points toward Christ."
+        }
+      ]
+    },
+    {
+      "id": "magdalene",
+      "name": "Saint Mary Magdalene",
+      "dates": "1st c.",
+      "title": "Magdal",
+      "blurb": "Follower of Christ, witness of the Crucifixion and first witness of the Resurrection. Western tradition merged her with the sinful woman who anointed Christ's feet, making her the model of the penitent.",
+      "attributes": [
+        {
+          "id": "jar",
+          "label": "Ointment jar",
+          "patterns": [
+            "\\bjar\\b",
+            "\\bvessel\\b",
+            "ointment",
+            "\\bpot\\b",
+            "\\bvase\\b",
+            "lidded (container|cup|box)",
+            "\\bcontainer\\b",
+            "\\bciborium\\b"
+          ],
+          "why": "She anointed Christ's feet, and came to anoint his body at the tomb."
+        },
+        {
+          "id": "hair",
+          "label": "Long loose hair",
+          "patterns": [
+            "long[^.]{0,25}hair",
+            "hair[^.]{0,30}(cascad|flow|falls|loose|tumbl|spill|down her back|over her shoulders)",
+            "loose hair"
+          ],
+          "why": "She dried Christ's feet with her hair; in the desert her hair grew to cover her body."
+        },
+        {
+          "id": "skull",
+          "label": "Skull",
+          "patterns": [
+            "\\bskulls?\\b"
+          ],
+          "why": "Penitence and meditation on death, in her later hermit life."
+        },
+        {
+          "id": "cross",
+          "label": "Crucifix",
+          "patterns": [
+            "\\bcrucifix\\b",
+            "\\bcross\\b"
+          ],
+          "why": "Her presence at the Crucifixion; devotion."
+        },
+        {
+          "id": "vanity",
+          "label": "Mirror / jewels (vanity)",
+          "patterns": [
+            "\\bmirror\\b",
+            "\\bjewel",
+            "\\bpearls?\\b",
+            "necklace",
+            "\\bearrings?\\b"
+          ],
+          "why": "Her worldly life before conversion — sometimes shown being cast off."
+        },
+        {
+          "id": "tears",
+          "label": "Tears / upturned eyes",
+          "patterns": [
+            "\\btears?\\b",
+            "\\bweep",
+            "eyes (roll|turn|look|gaze)[^.]{0,15}(up|heaven)",
+            "upturned",
+            "gazes? up"
+          ],
+          "why": "The ecstatic penitent, a key Baroque type."
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "patterns": [
+            "\\bbooks?\\b"
+          ],
+          "why": "Contemplative life and reading of scripture."
+        }
+      ]
+    },
+    {
+      "id": "george",
+      "name": "Saint George",
+      "dates": "d. c. 303",
+      "title": "\\bGeorge\\b",
+      "blurb": "A soldier-saint whose legend (popularized by The Golden Legend) has him kill a dragon that terrorized a city and rescue a princess. Patron of knights, England, Genoa and many others.",
+      "attributes": [
+        {
+          "id": "dragon",
+          "label": "Dragon",
+          "patterns": [
+            "\\bdragons?\\b",
+            "\\bserpent\\b",
+            "\\bmonster\\b",
+            "\\bbeast\\b",
+            "\\bcreature\\b"
+          ],
+          "why": "The dragon of Silene, symbol of evil and paganism."
+        },
+        {
+          "id": "horse",
+          "label": "Horse",
+          "patterns": [
+            "\\bhorses?\\b",
+            "\\bsteed\\b",
+            "\\bmounted\\b",
+            "\\brides?\\b",
+            "\\briding\\b"
+          ],
+          "why": "He is a mounted knight."
+        },
+        {
+          "id": "armor",
+          "label": "Armor",
+          "patterns": [
+            "\\barmou?r",
+            "\\bhelmet\\b",
+            "breastplate",
+            "chain mail"
+          ],
+          "why": "His identity as a soldier (in 15th-century art, dressed as a contemporary knight)."
+        },
+        {
+          "id": "lance",
+          "label": "Lance / sword",
+          "patterns": [
+            "\\blances?\\b",
+            "\\bspears?\\b",
+            "\\bswords?\\b",
+            "broken"
+          ],
+          "why": "He wounds the dragon with his lance (often shown broken), then finishes it with a sword."
+        },
+        {
+          "id": "princess",
+          "label": "Princess",
+          "patterns": [
+            "\\bprincess\\b",
+            "\\bwoman\\b",
+            "\\bmaiden\\b"
+          ],
+          "why": "The king's daughter offered to the dragon."
+        },
+        {
+          "id": "banner",
+          "label": "Red-cross banner / shield",
+          "patterns": [
+            "\\bbanner\\b",
+            "\\bpennant\\b",
+            "\\bflag\\b",
+            "red cross",
+            "\\bshield\\b"
+          ],
+          "why": "The cross of Saint George."
+        }
+      ]
+    },
+    {
+      "id": "francis",
+      "name": "Saint Francis of Assisi",
+      "dates": "1181/82–1226",
+      "title": "\\bFrancis\\b|\\bFrancesco\\b",
+      "exclude": "Xavier|Borgia|de Sales|Paola|Paula",
+      "blurb": "Son of a wealthy merchant who renounced everything to live in poverty and founded the Franciscan order. In 1224 on Mount La Verna he received the stigmata — the wounds of Christ — from a seraph.",
+      "attributes": [
+        {
+          "id": "stigmata",
+          "label": "Stigmata",
+          "patterns": [
+            "stigmata",
+            "\\bwounds?\\b",
+            "\\bseraph",
+            "(mark|hole|gash)[^.]{0,30}(hand|palm|feet|foot|side)"
+          ],
+          "why": "The wounds of the Crucifixion, received in a vision of a crucified seraph."
+        },
+        {
+          "id": "habit",
+          "label": "Brown/gray habit with knotted cord",
+          "patterns": [
+            "\\bhabit\\b",
+            "\\bcord\\b",
+            "\\brope\\b",
+            "\\bknot",
+            "hooded (robe|cloak)",
+            "\\bhood\\b",
+            "(brown|gray|grey|tan)[^.]{0,15}(robe|cloak|garment)"
+          ],
+          "why": "Franciscan habit; the three knots stand for poverty, chastity and obedience."
+        },
+        {
+          "id": "tonsure",
+          "label": "Tonsure",
+          "patterns": [
+            "tonsure",
+            "shaved (crown|head)",
+            "ring of (short )?hair"
+          ],
+          "why": "Shaved crown of a friar."
+        },
+        {
+          "id": "skull",
+          "label": "Skull",
+          "patterns": [
+            "\\bskulls?\\b"
+          ],
+          "why": "Meditation on death, especially in Counter-Reformation images."
+        },
+        {
+          "id": "crucifix",
+          "label": "Crucifix",
+          "patterns": [
+            "\\bcrucifix\\b",
+            "\\bcross\\b"
+          ],
+          "why": "Devotion to Christ's Passion."
+        },
+        {
+          "id": "birds",
+          "label": "Birds / animals",
+          "patterns": [
+            "\\bbirds?\\b",
+            "\\bwolf\\b",
+            "\\banimals?\\b"
+          ],
+          "why": "The Sermon to the Birds; the wolf of Gubbio."
+        }
+      ]
+    },
+    {
+      "id": "anthony",
+      "name": "Saint Anthony Abbot",
+      "dates": "c. 251–356",
+      "title": "\\bAnthony\\b|\\bAntony\\b|\\bAntonio\\b",
+      "exclude": "Padua",
+      "blurb": "Egyptian hermit, father of Christian monasticism, famously tormented by demons in the desert. The Antonine order, which cared for victims of ergotism ('Saint Anthony's fire'), kept pigs that roamed freely wearing bells.",
+      "attributes": [
+        {
+          "id": "demons",
+          "label": "Demons / temptation",
+          "patterns": [
+            "\\bdemons?\\b",
+            "\\bdevils?\\b",
+            "\\bmonsters?\\b",
+            "\\bcreatures?\\b",
+            "\\bfiend",
+            "grotesque",
+            "\\btempt"
+          ],
+          "why": "The Temptation of Saint Anthony — a showcase for fantastic imagery (Schongauer, Bosch, Callot)."
+        },
+        {
+          "id": "tau",
+          "label": "T-shaped staff",
+          "patterns": [
+            "T-shaped",
+            "\\btau\\b",
+            "\\bcrutch\\b",
+            "\\bstaff\\b",
+            "\\bcane\\b",
+            "walking stick"
+          ],
+          "why": "The tau cross / crutch of the aged hermit and of the Antonine hospitals."
+        },
+        {
+          "id": "pig",
+          "label": "Pig",
+          "patterns": [
+            "\\bpigs?\\b",
+            "\\bboar\\b",
+            "\\bswine\\b",
+            "\\bhog\\b"
+          ],
+          "why": "The Antonines' privileged pigs; later read as the demon of gluttony subdued."
+        },
+        {
+          "id": "bell",
+          "label": "Bell",
+          "patterns": [
+            "\\bbells?\\b"
+          ],
+          "why": "Bells worn by Antonine pigs, or rung to drive away demons."
+        },
+        {
+          "id": "fire",
+          "label": "Fire",
+          "patterns": [
+            "\\bfire\\b",
+            "\\bflames?\\b"
+          ],
+          "why": "'Saint Anthony's fire' (ergotism), which he was invoked against."
+        },
+        {
+          "id": "beard",
+          "label": "Long white beard / hermit",
+          "patterns": [
+            "(white|gray|grey)[^.]{0,20}beard",
+            "long beard",
+            "\\bhermit\\b",
+            "\\bcowl\\b",
+            "\\bhood\\b"
+          ],
+          "why": "He lived to about 105, and is always shown as an old monk."
+        }
+      ]
+    },
+    {
+      "id": "christopher",
+      "name": "Saint Christopher",
+      "dates": "3rd c. (legendary)",
+      "title": "\\bChristopher\\b|\\bCristoforo\\b",
+      "exclude": "Columbus",
+      "blurb": "A giant who wished to serve the greatest king and ferried travelers across a river. One night a child he carried grew impossibly heavy: it was Christ, bearing the weight of the world. 'Christopher' means Christ-bearer.",
+      "attributes": [
+        {
+          "id": "child",
+          "label": "Christ Child on shoulder",
+          "patterns": [
+            "\\bchild\\b",
+            "\\bbaby\\b",
+            "\\binfant\\b",
+            "\\bboy\\b",
+            "on his (shoulder|back)"
+          ],
+          "why": "The literal 'Christ-bearer.'"
+        },
+        {
+          "id": "river",
+          "label": "River",
+          "patterns": [
+            "\\briver\\b",
+            "\\bstream\\b",
+            "\\bwater\\b",
+            "\\bwad(e|es|ing)\\b"
+          ],
+          "why": "The ford where he carried travelers."
+        },
+        {
+          "id": "staff",
+          "label": "Staff / uprooted tree",
+          "patterns": [
+            "\\bstaff\\b",
+            "\\bpole\\b",
+            "tree",
+            "walking stick",
+            "\\bbranch\\b"
+          ],
+          "why": "His staff, which flowered the next day as a sign."
+        },
+        {
+          "id": "orb",
+          "label": "Orb / globe",
+          "patterns": [
+            "\\borb\\b",
+            "\\bglobe\\b",
+            "\\bsphere\\b",
+            "\\bball\\b"
+          ],
+          "why": "The child carries the world — the reason for the weight."
+        },
+        {
+          "id": "hermit",
+          "label": "Hermit with lantern",
+          "patterns": [
+            "\\bhermit\\b",
+            "\\blantern\\b"
+          ],
+          "why": "The hermit who told him to serve Christ by helping travelers lights the way."
+        }
+      ]
+    },
+    {
+      "id": "michael",
+      "name": "Saint Michael the Archangel",
+      "dates": "archangel",
+      "title": "\\bMichael\\b",
+      "blurb": "Leader of the heavenly army who cast Satan out of heaven (Revelation 12), and the angel who weighs souls at the Last Judgment.",
+      "attributes": [
+        {
+          "id": "wings",
+          "label": "Wings",
+          "patterns": [
+            "\\bwings?\\b",
+            "\\bwinged\\b"
+          ],
+          "why": "He is an angel."
+        },
+        {
+          "id": "devil",
+          "label": "Devil / dragon underfoot",
+          "patterns": [
+            "\\bdevils?\\b",
+            "\\bdemons?\\b",
+            "\\bdragon\\b",
+            "\\bSatan\\b",
+            "\\bserpent\\b",
+            "\\bmonster\\b",
+            "\\bcreature\\b",
+            "\\bbeast\\b"
+          ],
+          "why": "The defeat of Satan, war in heaven."
+        },
+        {
+          "id": "weapon",
+          "label": "Sword / spear",
+          "patterns": [
+            "\\bswords?\\b",
+            "\\bspears?\\b",
+            "\\blances?\\b"
+          ],
+          "why": "Commander of the angelic host."
+        },
+        {
+          "id": "scales",
+          "label": "Scales",
+          "patterns": [
+            "\\bscales\\b",
+            "\\bbalance\\b"
+          ],
+          "why": "Weighing of souls (psychostasis) at the Last Judgment."
+        },
+        {
+          "id": "armor",
+          "label": "Armor",
+          "patterns": [
+            "\\barmou?r",
+            "breastplate",
+            "\\bhelmet\\b"
+          ],
+          "why": "The warrior angel."
+        }
+      ]
+    },
+    {
+      "id": "barbara",
+      "name": "Saint Barbara",
+      "dates": "3rd c. (legendary)",
+      "title": "\\bBarbara\\b",
+      "blurb": "Shut in a tower by her pagan father, she had a third window added to honor the Trinity. Her father beheaded her and was then struck by lightning — so she became patron of artillerymen, miners, and anyone facing sudden death.",
+      "attributes": [
+        {
+          "id": "tower",
+          "label": "Tower (with three windows)",
+          "patterns": [
+            "\\btowers?\\b",
+            "\\bturret\\b"
+          ],
+          "why": "Her imprisonment; three windows for the Trinity."
+        },
+        {
+          "id": "chalice",
+          "label": "Chalice and host",
+          "patterns": [
+            "\\bchalice\\b",
+            "\\bcup\\b",
+            "\\bgoblet\\b",
+            "\\bhost\\b",
+            "\\bwafer\\b"
+          ],
+          "why": "She was invoked so as not to die without the last sacraments."
+        },
+        {
+          "id": "palm",
+          "label": "Martyr's palm",
+          "patterns": [
+            "palm (frond|branch|leaf|leaves)",
+            "\\bfronds?\\b"
+          ],
+          "why": "Martyrdom."
+        },
+        {
+          "id": "crown",
+          "label": "Crown",
+          "patterns": [
+            "\\bcrowns?\\b",
+            "\\bcrowned\\b"
+          ],
+          "why": "Virgin martyr's crown."
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "patterns": [
+            "\\bbooks?\\b"
+          ],
+          "why": "Learning and faith."
+        },
+        {
+          "id": "sword",
+          "label": "Sword",
+          "patterns": [
+            "\\bswords?\\b"
+          ],
+          "why": "Her beheading."
+        }
+      ]
+    },
+    {
+      "id": "lawrence",
+      "name": "Saint Lawrence",
+      "dates": "d. 258",
+      "title": "\\bLawrence\\b|\\bLaurence\\b|\\bLorenzo\\b",
+      "blurb": "Deacon of Rome, roasted alive on a gridiron. Legend says he joked, 'Turn me over, this side is done.' When ordered to hand over the Church's treasures, he presented the city's poor.",
+      "attributes": [
+        {
+          "id": "gridiron",
+          "label": "Gridiron",
+          "patterns": [
+            "gridiron",
+            "\\bgrill",
+            "griddle",
+            "\\bgrate\\b",
+            "\\bgrid\\b",
+            "\\brack\\b",
+            "iron (bars|frame)"
+          ],
+          "why": "Instrument of his martyrdom."
+        },
+        {
+          "id": "dalmatic",
+          "label": "Deacon's dalmatic",
+          "patterns": [
+            "dalmatic",
+            "\\bdeacon",
+            "\\bvestments?\\b",
+            "embroidered (robe|tunic)",
+            "tunic"
+          ],
+          "why": "His office as deacon."
+        },
+        {
+          "id": "palm",
+          "label": "Martyr's palm",
+          "patterns": [
+            "palm (frond|branch|leaf|leaves)",
+            "\\bfronds?\\b"
+          ],
+          "why": "Martyrdom."
+        },
+        {
+          "id": "fire",
+          "label": "Fire",
+          "patterns": [
+            "\\bfire\\b",
+            "\\bflames?\\b",
+            "\\bcoals\\b",
+            "\\bembers\\b"
+          ],
+          "why": "The burning coals beneath the gridiron."
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "patterns": [
+            "\\bbooks?\\b",
+            "\\bgospel"
+          ],
+          "why": "Deacons read the Gospel at Mass."
+        }
+      ]
+    },
+    {
+      "id": "bartholomew",
+      "name": "Saint Bartholomew",
+      "dates": "1st c.",
+      "title": "\\bBartholomew\\b|\\bBartolomeo\\b",
+      "blurb": "One of the Twelve Apostles, said to have preached in Armenia, where he was flayed alive. Michelangelo painted his own face on the flayed skin Bartholomew holds in the Sistine Last Judgment.",
+      "attributes": [
+        {
+          "id": "knife",
+          "label": "Flaying knife",
+          "patterns": [
+            "\\bknife\\b",
+            "\\bknives\\b",
+            "\\bblade\\b",
+            "\\bdagger\\b"
+          ],
+          "why": "Instrument of his martyrdom."
+        },
+        {
+          "id": "skin",
+          "label": "Flayed skin",
+          "patterns": [
+            "\\bflay",
+            "\\bskin\\b(?! tone)",
+            "\\bpelt\\b"
+          ],
+          "why": "He is sometimes shown holding his own skin."
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "patterns": [
+            "\\bbooks?\\b"
+          ],
+          "why": "Apostles carry the Gospel."
+        },
+        {
+          "id": "beard",
+          "label": "Dark beard",
+          "patterns": [
+            "(dark|black|brown)[^.]{0,20}beard",
+            "\\bbeard"
+          ],
+          "why": "Conventional apostle type."
+        }
+      ]
+    },
+    {
+      "id": "andrew",
+      "name": "Saint Andrew",
+      "dates": "d. c. 60",
+      "title": "\\bAndrew\\b|\\bAndrea\\b",
+      "blurb": "Fisherman and brother of Peter, the first called of the apostles. Tradition says he was crucified on an X-shaped cross at Patras — the saltire on the flag of Scotland.",
+      "attributes": [
+        {
+          "id": "saltire",
+          "label": "X-shaped cross",
+          "patterns": [
+            "X-shaped",
+            "saltire",
+            "diagonal (cross|beams)",
+            "\\bX\\b",
+            "crossed (beams|timbers|planks)"
+          ],
+          "why": "His martyrdom; he felt unworthy of a cross like Christ's."
+        },
+        {
+          "id": "cross",
+          "label": "Cross (any)",
+          "patterns": [
+            "\\bcross\\b"
+          ],
+          "why": "Even when not clearly X-shaped, a large cross is his sign."
+        },
+        {
+          "id": "fishing",
+          "label": "Fish / net",
+          "patterns": [
+            "\\bfish",
+            "\\bnets?\\b",
+            "\\bboat"
+          ],
+          "why": "His trade as a fisherman."
+        },
+        {
+          "id": "beard",
+          "label": "Long white/gray beard",
+          "patterns": [
+            "(white|gray|grey)[^.]{0,20}beard",
+            "long[^.]{0,15}beard",
+            "\\bbeard"
+          ],
+          "why": "Conventional portrait type: elderly, with long divided beard."
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "patterns": [
+            "\\bbooks?\\b"
+          ],
+          "why": "Apostle and preacher."
+        }
+      ]
+    },
+    {
+      "id": "roch",
+      "name": "Saint Roch",
+      "dates": "c. 1348–1376/79",
+      "title": "\\bRoch\\b|\\bRocco\\b|\\bRoche\\b",
+      "blurb": "French pilgrim who nursed plague victims in Italy, caught the plague himself, and withdrew to a forest where a dog brought him bread. Hugely popular in plague-era Europe, alongside Sebastian.",
+      "attributes": [
+        {
+          "id": "sore",
+          "label": "Plague sore on thigh",
+          "patterns": [
+            "\\bsore\\b",
+            "\\bwound\\b",
+            "\\bthigh\\b",
+            "\\blesion\\b",
+            "\\bbubo",
+            "(lifts?|raises?|pulls? (up|aside)) (his|the) (tunic|robe|garment|cloak)",
+            "bare (leg|thigh)",
+            "\\blegs? (is |are )?(raised|exposed|bare|uncovered)",
+            "(raises?|lifts?|shows?|exposes?) (his|one|a) (leg|thigh)"
+          ],
+          "why": "He lifts his tunic to show the bubo of plague."
+        },
+        {
+          "id": "dog",
+          "label": "Dog with bread",
+          "patterns": [
+            "\\bdogs?\\b",
+            "\\bhound\\b",
+            "\\bbread\\b",
+            "\\bloaf\\b"
+          ],
+          "why": "The dog that fed him in the forest."
+        },
+        {
+          "id": "pilgrim",
+          "label": "Pilgrim's hat, staff, shell",
+          "patterns": [
+            "pilgrim",
+            "\\bstaff\\b",
+            "\\bshells?\\b",
+            "\\bscallop",
+            "wide-brimmed hat",
+            "\\bhat\\b",
+            "\\bgourd\\b"
+          ],
+          "why": "He was a pilgrim to Rome."
+        },
+        {
+          "id": "angel",
+          "label": "Angel",
+          "patterns": [
+            "\\bangels?\\b"
+          ],
+          "why": "An angel tended his wound."
+        }
+      ]
+    },
+    {
+      "id": "james",
+      "name": "Saint James the Greater",
+      "dates": "d. 44",
+      "title": "\\bJames\\b|\\bJacopo\\b|\\bGiacomo\\b|\\bSantiago\\b",
+      "exclude": "Less|Minor|Alphaeus|James I\\b|King James",
+      "blurb": "Apostle, brother of John, first apostle to be martyred. His relics at Santiago de Compostela made him the patron of pilgrims; the scallop shell became the badge of the pilgrimage.",
+      "attributes": [
+        {
+          "id": "shell",
+          "label": "Scallop shell",
+          "patterns": [
+            "\\bshells?\\b",
+            "\\bscallop"
+          ],
+          "why": "Badge of pilgrims to Compostela."
+        },
+        {
+          "id": "staff",
+          "label": "Pilgrim's staff",
+          "patterns": [
+            "\\bstaff\\b",
+            "\\bpilgrim",
+            "walking stick",
+            "\\bgourd\\b"
+          ],
+          "why": "The pilgrim's staff and water gourd."
+        },
+        {
+          "id": "hat",
+          "label": "Pilgrim's hat",
+          "patterns": [
+            "\\bhat\\b",
+            "wide-brimmed"
+          ],
+          "why": "Broad-brimmed traveling hat."
+        },
+        {
+          "id": "book",
+          "label": "Book",
+          "patterns": [
+            "\\bbooks?\\b"
+          ],
+          "why": "Apostle."
+        },
+        {
+          "id": "sword",
+          "label": "Sword",
+          "patterns": [
+            "\\bswords?\\b"
+          ],
+          "why": "He was beheaded by Herod Agrippa."
+        },
+        {
+          "id": "horse",
+          "label": "Horse (Matamoros)",
+          "patterns": [
+            "\\bhorses?\\b",
+            "\\bmounted\\b",
+            "on horseback"
+          ],
+          "why": "Spanish legend of his miraculous appearance at the battle of Clavijo."
+        }
+      ]
+    },
+    {
+      "id": "evangelist",
+      "name": "Saint John the Evangelist",
+      "dates": "d. c. 100",
+      "title": "John the Evangelist|John Evangelist|Patmos|John the Divine",
+      "blurb": "The 'beloved disciple', traditionally author of the fourth Gospel and of Revelation, written in exile on the island of Patmos. Usually shown young and beardless — unlike the other apostles.",
+      "attributes": [
+        {
+          "id": "eagle",
+          "label": "Eagle",
+          "patterns": [
+            "\\beagles?\\b",
+            "\\bbird\\b"
+          ],
+          "why": "His Gospel soars like an eagle (the four living creatures of Ezekiel and Revelation)."
+        },
+        {
+          "id": "chalice",
+          "label": "Chalice with serpent",
+          "patterns": [
+            "\\bchalice\\b",
+            "\\bcup\\b",
+            "\\bgoblet\\b",
+            "\\bsnake\\b",
+            "\\bserpent\\b",
+            "\\bdragon\\b"
+          ],
+          "why": "He blessed a poisoned cup, and the poison left it as a snake."
+        },
+        {
+          "id": "book",
+          "label": "Book / writing",
+          "patterns": [
+            "\\bbooks?\\b",
+            "\\bwriting\\b",
+            "\\bwrites\\b",
+            "\\bpen\\b",
+            "\\bquill\\b",
+            "\\bscroll\\b"
+          ],
+          "why": "Author of the Gospel and Revelation."
+        },
+        {
+          "id": "youth",
+          "label": "Youthful, beardless",
+          "patterns": [
+            "beardless",
+            "clean-?shaven",
+            "\\byoung\\b",
+            "\\byouthful\\b",
+            "\\bboyish\\b"
+          ],
+          "why": "The youngest apostle."
+        },
+        {
+          "id": "vision",
+          "label": "Vision in the sky",
+          "patterns": [
+            "\\bvision\\b",
+            "\\bclouds?\\b",
+            "in the sky",
+            "\\bheavens?\\b",
+            "woman clothed"
+          ],
+          "why": "The visions of Revelation, e.g. the Woman Clothed with the Sun."
+        }
+      ]
+    },
+    {
+      "id": "gregory",
+      "name": "Saint Gregory the Great",
+      "dates": "c. 540–604",
+      "title": "\\bGregory\\b|\\bGregorio\\b",
+      "exclude": "Nazianzus|Thaumaturg|Gregory XIII|Gregory XV|Gregory XVI",
+      "blurb": "Pope and Doctor of the Church. His secretary Peter the Deacon reported seeing the Holy Spirit as a dove at Gregory's ear as he dictated his writings. (This was one of the examples from our guest lecture.)",
+      "attributes": [
+        {
+          "id": "dove",
+          "label": "Dove at his ear",
+          "patterns": [
+            "\\bdoves?\\b",
+            "\\bbird\\b"
+          ],
+          "why": "The Holy Spirit inspiring his writing."
+        },
+        {
+          "id": "tiara",
+          "label": "Papal tiara",
+          "patterns": [
+            "\\btiara\\b",
+            "papal",
+            "triple crown",
+            "\\bmitre\\b",
+            "\\bmiter\\b",
+            "\\bcrown\\b"
+          ],
+          "why": "His office as pope."
+        },
+        {
+          "id": "writing",
+          "label": "Book / writing",
+          "patterns": [
+            "\\bbooks?\\b",
+            "\\bwriting\\b",
+            "\\bwrites\\b",
+            "\\bpen\\b",
+            "\\bquill\\b",
+            "\\bdesk\\b",
+            "\\bscribe\\b",
+            "\\bdictat"
+          ],
+          "why": "His sermons, letters and the Dialogues."
+        },
+        {
+          "id": "mass",
+          "label": "Mass of Saint Gregory",
+          "patterns": [
+            "Mass of",
+            "celebrat\\w* (the )?Mass",
+            "\\baltar\\b",
+            "Man of Sorrows",
+            "\\bchalice\\b"
+          ],
+          "why": "Christ as Man of Sorrows appeared on the altar while Gregory said Mass — a popular late-medieval indulgence image."
+        },
+        {
+          "id": "crozier",
+          "label": "Papal cross-staff",
+          "patterns": [
+            "\\bcrozier\\b",
+            "\\bcrosier\\b",
+            "\\bstaff\\b",
+            "triple cross",
+            "double cross"
+          ],
+          "why": "Staff of the papal office."
+        }
+      ]
+    }
+  ]
+}
